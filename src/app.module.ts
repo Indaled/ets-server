@@ -16,12 +16,12 @@ import {ServeStaticModule} from "@nestjs/serve-static";
       envFilePath: `./config/${process.env.NODE_ENV}/.env`
     }),
     SequelizeModule.forRoot({
-      dialect: 'postgres',
-      host: process.env.POSTGRES_HOST,
-      port: Number(process.env.POSTGRESS_PORT),
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRESS_PASSWORD,
-      database: process.env.POSTGRES_DB,
+      dialect: 'mariadb',
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DB,
       models: [Code],
       autoLoadModels: true
     }),
